@@ -1,6 +1,4 @@
-# php_wasm_BUILDER
-
-## Overview
+# php_wasm_BUILDER Readme
 
 This Apptainer container compiles **PHP to WebAssembly (PHP-WASM)** with **libxml2** and **SQLite** support.  
 The SIF only sets up the build environment; downloading sources and compiling happens at runtime. 
@@ -77,5 +75,5 @@ This displays container-specific instructions and default environment variables.
 
 ---
 
-**Based on the repositories by Sean Morris and Suyoku.**
+**Based on the repositories by Sean Morris (https://github.com/seanmorris/php-wasm) and Suyoku (https://github.com/soyuka/php-wasm).**
 
