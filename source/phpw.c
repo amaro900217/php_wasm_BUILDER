@@ -26,11 +26,8 @@ char *EMSCRIPTEN_KEEPALIVE phpw_exec(char *code)
   zend_try
   {
     zval retZv;
-
     zend_eval_string(code, &retZv, "php-wasm evaluate expression");
-
     convert_to_string(&retZv);
-
     retVal = Z_STRVAL(retZv);
   } zend_catch {
   } zend_end_try();
@@ -76,8 +73,8 @@ void phpw(char *file)
     zend_stream_init_filename(&file_handle, file);
     // file_handle.primary_script = 1;
 
-    if ((int)php_execute_script(&file_handle) == FAILURE) {
-        php_printf("Failed to execute PHP script.\n");
+    if (php_execute_script(&file_handle) == FAILURE) {
+      php_printf("Failed to execute PHP script.\n");
     }
 
     zend_destroy_file_handle(&file_handle);
