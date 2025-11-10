@@ -1,7 +1,7 @@
 #include "sapi/embed/php_embed.h"
 #include <emscripten.h>
 #include <stdlib.h>
-
+ 
 #include "zend_globals_macros.h"
 #include "zend_exceptions.h"
 #include "zend_closures.h"
