@@ -23,7 +23,8 @@ From: emscripten/emsdk:3.1.35
     * TMPDIR=/tmp (can be mounted from the host for more space)
     
     Example usage with default settings (no custom variables):
-
+    
+    apptainer build php-wasm.sif php-wasm.def
     apptainer run 
         -B "$(pwd)/temp":/tmp 
         -B "$(pwd)/source":/src 
