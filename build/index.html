@@ -16,7 +16,7 @@ let phpBuffer = [];
 async function main() {
     const php = await phpBinary({
         print: (data) => phpBuffer.push(data),
-        printErr: (data) => console.error("[PHP]", data),
+        //printErr: (data) => console.error("[PHP]", data),
         noInitialRun: true
     });
 
@@ -34,7 +34,7 @@ async function main() {
     doc.write(html);
     doc.close();
 }
-
+ 
 main().catch(console.error);
 </script>
 
