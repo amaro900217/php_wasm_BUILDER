@@ -18,7 +18,7 @@ From: emscripten/emsdk:3.1.61
     * MODULARIZE=1
     * EXPORT_ES6=1
     * ASSERTIONS=0
-    * OPTIMIZE=-O3
+    * OPTIMIZE=-Oz
     * INITIAL_MEMORY=128mb
     * TMPDIR=/tmp (can be mounted from the host for more space)
     
@@ -93,11 +93,11 @@ From: emscripten/emsdk:3.1.61
 
     # --- SQLITE ---
     echo "Downloading/compiling SQLite..."
-    cd "$BUILD_DIR"
-    wget https://sqlite.org/2020/sqlite-amalgamation-3330000.zip
-    unzip sqlite-amalgamation-3330000.zip
-    rm sqlite-amalgamation-3330000.zip
-    SQLITE_DIR="$BUILD_DIR/sqlite-amalgamation-3330000"
+    cd "$BUILD_DIR"   
+    wget https://sqlite.org/2025/sqlite-amalgamation-3510000.zip
+    unzip sqlite-amalgamation-3510000.zip
+    rm sqlite-amalgamation-3510000.zip
+    SQLITE_DIR="$BUILD_DIR/sqlite-amalgamation-3510000"
     emcc -Oz -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_DISABLE_LFS -DSQLITE_ENABLE_FTS3 \
          -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_THREADSAFE=0 -DSQLITE_ENABLE_NORMALIZE \
          -c "$SQLITE_DIR/sqlite3.c" -o "$BUILD_DIR/sqlite3.o"
